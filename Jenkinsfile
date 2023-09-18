@@ -33,9 +33,9 @@ pipeline {
 
 stage('Deploy') {
 	agent {
-		kubernetes {
-			cloud 'kube'
-			yaml '''
+	  kubernetes {
+	    cloud 'kube'
+            yaml '''
         apiVersion: v1
         kind: Pod
         metadata:
