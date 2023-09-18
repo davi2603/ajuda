@@ -9,11 +9,6 @@ pipeline {
 
   stages {
 
-#    stage('Checkout Source') {
-#      steps {
-#        git 'https://github.com/davi2603/ajuda.git'
-#      }
-#    }
 
     stage('Build image') {
       steps{
