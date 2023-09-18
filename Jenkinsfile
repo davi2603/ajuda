@@ -32,10 +32,24 @@ pipeline {
     }
 
 stage('Deploy') {
-    steps {
-        sh 'kubectl set image pod/teste5 teste5=$dockerimagename'
-    }
-}
+	agent {
+		kubernetes {
+			cloud 'kube'
+			yaml '''
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          creationTimestamp: null
+          labels:
+            run: teste5
+          name: teste5
+        spec:
+          containers:
+          - image: davi2603/react-app
+            name: teste5
+
+		}
+	}
 
   }
 
