@@ -33,7 +33,6 @@ pipeline {
 
 stage('Deploy') {
     steps {
-        sh 'docker push my-app'
         sh 'kubectl set image deployment/davi2603/react-app my-app=react-app'
     }
 }
