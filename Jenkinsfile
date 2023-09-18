@@ -33,7 +33,7 @@ pipeline {
 
 stage('Deploy') {
     steps {
-        sh 'kubectl set image pod/teste5 teste5='$dockerimagename''
+        sh 'kubectl set image pod/teste5 teste5=$dockerimagename'
     }
 }
 
